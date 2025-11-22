@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
-  base: "/food",
+  base: "/food-landingpage",
   build: {
     chunkSizeWarningLimit: 1600,
   },
