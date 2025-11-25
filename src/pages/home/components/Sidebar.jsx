@@ -21,11 +21,11 @@ export default function HomeSidebar() {
             <div className="content w-full flex flex-col justify-center items-center">
                 <div className="flex flex-col items-center gap-4 text-md [&>button]:text-white font-semibold" onClick={goTo}>
                     <button href="#inn">Início</button>
+                    <button href="#bnr">Categorias</button>
                     <button href="#cdp">Cardápio</button>
-                    <button href="#ctt">Contato</button>
                 </div>
 
-                <button className="flex bg-amber-300 p-[5px_10px] text-orange-800 shadow-sm hover:shadow-md hover:bg-amber-400 mt-4 w-fit">Fazer pedido <FontAwesomeIcon icon={faUtensils} /></button>
+                <button className="flex bg-amber-300 p-[10px_15px] text-orange-800 shadow-sm hover:shadow-md hover:bg-amber-400 mt-4 w-fit rounded-full! text-[.8rem]">Fazer pedido <FontAwesomeIcon icon={faUtensils} /></button>
             </div>
         </div>
     )

@@ -1,9 +1,10 @@
 .component.cardapio {
+    transition: all;
     h2 {
         font-size: 1.4rem;
         font-weight: 500;
         color: orangered;
-        border-bottom: solid 3px orangered;
+        border-bottom: solid 3px #ff4500;
         margin-bottom: 20px;
     }
 
@@ -19,7 +20,7 @@
             padding: 10px;
             background-color: white;
             height: fit-content;
-            border-radius: 5px;
+            border-radius: 10px;
 
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.119);
 

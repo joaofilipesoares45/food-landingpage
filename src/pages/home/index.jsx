@@ -1,12 +1,16 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faBars, faBurger, faCode, faUtensils } from "@fortawesome/free-solid-svg-icons"
+import { faBars, faBurger, faChevronCircleDown, faChevronCircleUp, faCode, faUtensils } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faInstagram, faLinkedin, faWhatsapp } from "@fortawesome/free-brands-svg-icons"
 import HomeSidebar from "./components/Sidebar"
 import { openLink, openModal, whatsMsg } from "../../utils/functions"
 import Cardapio from "./components/Cardapio"
 import "./css/index.css"
+import Banners from "./components/Banners"
+import { useState } from "react"
 
 export default function Home() {
+
+    const [open, setOpen] = useState(true)
 
     const goTo = (e) => {
         e.preventDefault()
@@ -21,24 +25,24 @@ export default function Home() {
             <HomeSidebar />
 
             <header className="flex flex-row justify-between items-center p-[15px] shadow-xs sticky top-0 bg-[#fff8f4] z-1">
-                <a href="/food" className="flex items-center gap-[5px] text-[1.6rem] sm:text-xl font-semibold"><FontAwesomeIcon icon={faBurger} />Food</a>
+                <a href="/" className="flex items-center gap-[5px] text-[1.6rem] sm:text-xl font-semibold"><FontAwesomeIcon icon={faBurger} />Food</a>
 
                 <div className="hidden justify-between gap-10 sm:flex text-[.75rem] [&>button]:text-gray-500 [&>button:hover]:text-black! font-semibold" onClick={goTo}>
                     <button href="#inn">Início</button>
+                    <button href="#bnr">Categorias</button>
                     <button href="#cdp">Cardápio</button>
-                    <button href="#ctt">Contato</button>
                 </div>
 
-                <button className="hidden! sm:flex! bg-amber-300 p-[5px_10px] text-[.8rem] text-orange-800 shadow-sm hover:shadow-md hover:bg-amber-400">
+                <button className="hidden! sm:flex! bg-amber-300 p-[5px_10px] text-[.8rem] text-orange-800 shadow-sm hover:shadow-md hover:bg-amber-400 rounded-full!">
                     Fazer pedido <FontAwesomeIcon icon={faUtensils} />
                 </button>
 
                 <FontAwesomeIcon icon={faBars} className="flex sm:hidden! text-xl" onClick={() => openModal("home-sidebar")} />
             </header>
 
-            <section className="h-[calc(100dvh-59.2px)] w-full flex items-center overflow-hidden!" id="inn">
+            <section className="sm:h-[calc(100vh-59.2px)] h-screen w-full flex items-center overflow-hidden!" id="inn">
 
-                <div className="relative flex items-center justify-end w-dvw h-full">
+                <div className="relative flex items-center justify-end w-full h-full">
                     <h1 className="sm:text-6xl text-[2.5rem] font-extrabold flex flex-col sm:items-end mx-[2vw] absolute left-0 bg-[#fff8f4d5] backdrop-blur-sm p-[40px_15px] rounded-xl">
                         Mais que uma refeição,
                         <span className="text-orange-500 sm:mt-2.5 border-b-4 sm:pb-2.5">
@@ -51,8 +55,22 @@ export default function Home() {
 
             </section>
 
-            <section className="p-4" id="cdp">
-                <Cardapio />
+            <section className="p-4 mt-2.5" id="bnr">
+                <Banners />
+            </section>
+
+            <section className={`p-4 transition-all flex flex-col items-center ${open ? "h-min" : "h-97!"} relative mb-4`} id="cdp">
+                <button className="absolute bottom-1 bg-[#ff4500] text-white rounded-full! p-[4px_10px] gap-3! font-semibold text-[.8rem]" onClick={() => {
+                    setOpen(!open)
+                    console.log(open)
+                }} >
+                    Ver mais <FontAwesomeIcon icon={faChevronCircleDown} className={`${open ? "rotate-180" : "rotate-0"}`} />
+                </button>
+
+                <div className="overflow-hidden w-full">
+                    <Cardapio />
+                </div>
+
             </section>
 
             <footer className="bottom-page" id="ctt">

@@ -48,7 +48,7 @@ const cardapio = {
 export default function Cardapio() {
     return (
         <div className="component cardapio">
-            <h2>Cardapio</h2>
+            <h2>Cardápio</h2>
             <div className="list-contain">
                 {Object.keys(cardapio).map(key => {
                     return (
