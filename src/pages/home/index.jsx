@@ -10,7 +10,7 @@ import { useState } from "react"
 
 export default function Home() {
 
-    const [open, setOpen] = useState(true)
+    const [open, setOpen] = useState(false)
 
     const goTo = (e) => {
         e.preventDefault()
@@ -25,7 +25,7 @@ export default function Home() {
             <HomeSidebar />
 
             <header className="flex flex-row justify-between items-center p-[15px] shadow-xs sticky top-0 bg-[#fff8f4] z-1">
-                <a href="/" className="flex items-center gap-[5px] text-[1.6rem] sm:text-xl font-semibold"><FontAwesomeIcon icon={faBurger} />Food</a>
+                <a href="/food-landingpage" className="flex items-center gap-[5px] text-[1.6rem] sm:text-xl font-semibold"><FontAwesomeIcon icon={faBurger} />Food</a>
 
                 <div className="hidden justify-between gap-10 sm:flex text-[.75rem] [&>button]:text-gray-500 [&>button:hover]:text-black! font-semibold" onClick={goTo}>
                     <button href="#inn">Início</button>
@@ -55,11 +55,11 @@ export default function Home() {
 
             </section>
 
-            <section className="p-4 mt-2.5" id="bnr">
+            <section className="p-4 bg-[#ff591c]" id="bnr">
                 <Banners />
             </section>
 
-            <section className={`p-4 transition-all flex flex-col items-center ${open ? "h-min" : "h-97!"} relative mb-4`} id="cdp">
+            <section className={`p-4 pt-2 transition-all flex flex-col items-center ${open ? "h-min" : "h-97!"} relative mb-4`} id="cdp">
                 <button className="absolute bottom-1 bg-[#ff4500] text-white rounded-full! p-[4px_10px] gap-3! font-semibold text-[.8rem]" onClick={() => {
                     setOpen(!open)
                     console.log(open)
