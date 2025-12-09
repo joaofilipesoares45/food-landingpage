@@ -43,13 +43,15 @@ export default function Home() {
             <section className="sm:h-[calc(100vh-59.2px)] h-[calc(100vh-100px)] w-full flex items-center overflow-hidden!" id="inn">
 
                 <div className="relative flex items-center justify-end w-full h-full">
-                    <h1 className="sm:text-6xl text-[2.5rem] font-extrabold flex flex-col sm:items-end mx-[2vw] absolute left-0 bg-[#fff8f4d5] backdrop-blur-sm p-[20px_15px] rounded-xl">
-                        Mais que uma refeição,
-                        <span className="text-orange-700 sm:mt-2.5 border-b-4 sm:pb-2.5">
-                            uma Experiência!
+                    <h1 className="sm:text-5xl text-[1.8rem] font-extrabold mx-[2vw] absolute left-0 bg-[#fff8f4d5] backdrop-blur-sm p-[20px_15px] rounded-xl w-[96vw] max-w-[600px]">
+                        Mais que uma refeição,<br/> uma
+                        <span className="text-orange-700 ml-2">
+                            Experiência!
                         </span>
 
-                        <h2 className="text-orange-700 text-[2rem]! mt-5 flex items-center justify-between gap-1.5 ">
+                        <hr className="border-t-3 border-orange-700 my-2.5"/>
+
+                        <h2 className="text-orange-700 text-[2rem]! flex items-center justify-between">
                             <span className="[&>svg]:hover:text-amber-900">
                                 <FontAwesomeIcon icon={faWhatsappSquare} />
                                 <FontAwesomeIcon icon={faPhoneSquare} />
@@ -57,7 +59,7 @@ export default function Home() {
                             </span>
 
 
-                            <button className="flex p-[10px_15px] bg-orange-700 text-white shadow-sm hover:shadow-md hover:bg-orange-900 w-fit rounded-full! text-[.8rem]">Fazer pedido <FontAwesomeIcon icon={faUtensils} /></button>
+                            <button className="flex p-[10px_15px] bg-orange-700 text-white hover:bg-orange-900 w-fit rounded-full! text-[.8rem]">Fazer pedido <FontAwesomeIcon icon={faUtensils} /></button>
                         </h2>
                     </h1>
                     <div className="bg-[url(/bannerV.jpg)] bg-cover h-full w-dvw max-w-[550px]"></div>
@@ -65,7 +67,7 @@ export default function Home() {
 
             </section>
 
-            <section className="p-4 bg-[#ff591c]" id="bnr">
+            <section className="p-4 bg-[#ff591c] sm:mt-2.5" id="bnr">
                 <Banners />
             </section>
 
